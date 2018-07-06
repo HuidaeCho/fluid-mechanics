@@ -5,7 +5,7 @@ a fluid.
 
 ## License
 
-Copyright (C) 2018, Huidae Cho <<https://geni.isnew.info>>
+Copyright (C) 2018, Huidae Cho <<https://geni.isnew.info>>  
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
