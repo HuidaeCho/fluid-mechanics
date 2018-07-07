@@ -3,7 +3,7 @@
 # This Python code calculates the terminal velocity of an object falling
 # through a fluid.
 #
-# Copyright (C) 2018, Huidae Cho <https://geni.isnew.info>
+# Copyright (C) 2018, Huidae Cho <https://idea.isnew.info>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
