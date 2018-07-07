@@ -103,7 +103,6 @@ def calc_obj_term_vel_1(vel_guess, vel_thresh, max_iter, obj_dia, obj_dens,
 
     obj_vol = pi*obj_dia**3/6
     obj_area = pi*obj_dia**2/4
-
     buoy_force = flu_dens*grav*obj_vol
     obj_weight = obj_dens*grav*obj_vol
 
