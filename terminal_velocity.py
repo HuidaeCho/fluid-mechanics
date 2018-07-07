@@ -60,6 +60,8 @@ flu_kine_vis = air_kine_vis
 #flu_kine_vis = 1e-6
 #flu_dens = 998
 
+verbose = True
+
 # parameters for method 1
 vel_guess = 1 # m/s
 vel_thresh = 1e-3 # m/s
@@ -96,6 +98,9 @@ def calc_obj_vel(obj_dia, obj_dens, flu_dens, drag_coef):
 def calc_obj_term_vel_1(vel_guess, vel_thresh, max_iter, obj_dia, obj_dens,
         flu_dens, flu_kine_vis, verbose):
     # not a function of height
+    if verbose:
+        print '=== Method 1 ==='
+
     obj_vol = pi*obj_dia**3/6
     obj_area = pi*obj_dia**2/4
 
@@ -128,6 +133,9 @@ def calc_obj_term_vel_1(vel_guess, vel_thresh, max_iter, obj_dia, obj_dens,
 def calc_obj_term_vel_2(time_res, force_bal_thresh, obj_dia, obj_dens,
         flu_dens, flu_kine_vis, verbose):
     # not a function of height
+    if verbose:
+        print '=== Method 2 ==='
+
     obj_vol = pi*obj_dia**3/6
     obj_area = pi*obj_dia**2/4
     obj_mass = obj_dens*obj_vol
@@ -156,10 +164,14 @@ def calc_obj_term_vel_2(time_res, force_bal_thresh, obj_dia, obj_dens,
 
     return vel_term
 
-print '=== Method 1 ==='
 vel_term_1 = calc_obj_term_vel_1(vel_guess, vel_thresh, max_iter, obj_dia,
-        obj_dens, flu_dens, flu_kine_vis, True)
-print
-print '=== Method 2 ==='
+        obj_dens, flu_dens, flu_kine_vis, verbose)
+if verbose:
+    print
 vel_term_2 = calc_obj_term_vel_2(time_res, force_bal_thresh, obj_dia, obj_dens,
-        flu_dens, flu_kine_vis, True)
+        flu_dens, flu_kine_vis, verbose)
+if verbose:
+    print
+print '=== Results ==='
+print 'Method 1: %f m/s' % vel_term_1
+print 'Method 2: %f m/s' % vel_term_2
